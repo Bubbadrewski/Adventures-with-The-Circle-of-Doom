@@ -18,14 +18,10 @@ public class Player : MonoBehaviour
     private bool _hasCollided;
     [SerializeField]
     private float _lives = 4f;
-    [SerializeField]
-    private float _speedScalar = 4;
     // Start is called before the first frame update
     void Start()
     {
         weaponsChecked = true;
-
-        _speedScalar = 4f;
 
         weapons = 0;
 
@@ -111,7 +107,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            transform.Translate(direction * _speed * Time.deltaTime * _speedScalar);
+            transform.Translate(direction * _speed * Time.deltaTime);
         }
         // Up and down boundary or y boundary
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -11f, 11f), Mathf.Clamp(transform.position.y, -5f, 5f), 0);
