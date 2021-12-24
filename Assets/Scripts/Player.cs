@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
     {
         CalculateMovement();
 
+        //Used to define what weapon is being used
         if (!weaponsChecked)
         {
             if (weapons == 0)
@@ -64,19 +65,6 @@ public class Player : MonoBehaviour
         {
             weaponsChecked = false;
         }
-        //pain follows
-        /*
-        if (_circleColor == 1)
-        {
-            _THE_CIRCLE_OF_DOoM.GetComponent<Renderer>().material.color = Color.white;
-            _circleColor = 2;
-        }
-        else if (_circleColor == 2)
-        {
-            _THE_CIRCLE_OF_DOoM.GetComponent<Renderer>().material.color = Color.red;
-            _circleColor = 1;
-        }
-        */
     }
     void CalculateMovement()
     {
@@ -85,9 +73,6 @@ public class Player : MonoBehaviour
 
   
         Vector3 direction = new Vector3(horizontalInput, verticalInput, 0);
-
-        //transform.Translate(Vector3.right * horizontalInput * _speed * Time.deltaTime);
-        //transform.Translate(Vector3.up * verticalInput * _speed * Time.deltaTime);
 
         if (_hasCollided == true)
         {
