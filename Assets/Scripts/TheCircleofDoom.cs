@@ -30,29 +30,6 @@ public class TheCircleofDoom : MonoBehaviour
         targetLoc = new Vector2(Mathf.Clamp(targetLoc.x, -1, 1), Mathf.Clamp(targetLoc.y, -1, 1));
         transform.Translate(targetLoc * _speed * Time.deltaTime);
 
-        //X,Y position wrap around useless for current build
-        /*
-        float Xborderpos = 12;
-        float Xborderneg = -12;
-        if (transform.position.x > Xborderpos)
-        {
-            transform.position = new Vector3(Xborderneg+1, transform.position.y, 0);
-        }
-        else if (transform.position.x < Xborderneg)
-        {
-            transform.position = new Vector3(Xborderpos-1, transform.position.y, 0);
-        }
-        float Yborderpos = 6;
-        float Yborderneg = -6;
-        if (transform.position.y > Yborderpos)
-        {
-            transform.position = new Vector3(transform.position.x, Yborderneg+1, 0);
-        }
-        else if (transform.position.y < Yborderneg)
-        {
-            transform.position = new Vector3(transform.position.x, Yborderpos-1, 0);
-        }
-        */
     }
     //below we trigger an action when the player collides with this object, action is defined in Player script
     private void OnTriggerEnter2D(Collider2D other)

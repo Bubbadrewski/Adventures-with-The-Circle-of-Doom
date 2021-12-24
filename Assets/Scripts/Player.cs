@@ -93,32 +93,7 @@ public class Player : MonoBehaviour
         else
         {
             transform.Translate(direction * _speed * Time.deltaTime);
-        }
-        // Up and down boundary or y boundary
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -11f, 11f), Mathf.Clamp(transform.position.y, -5f, 5f), 0);
-
-       
-        // The following causes the player to wrap around
-
-        /* if (transform.position.x > 12)
-        {
-            transform.position = new Vector3(-11, transform.position.y, 0);
-        }
-        else if (transform.position.x < -12)
-        {
-            transform.position = new Vector3(11, transform.position.y, 0);
-        }
-        if (transform.position.y > 6)
-        {
-            transform.position = new Vector3(transform.position.x, -5, 0);
-        }
-        else if (transform.position.y < -6)
-        {
-            transform.position = new Vector3(transform.position.x, 5, 0);
-        }
-        */
-
-       
+        }  
     }
     public void SetCircleofDoomCollision()
     {
