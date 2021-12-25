@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -11,13 +12,12 @@ public class Player : MonoBehaviour
     private GameObject _THE_CIRCLE_OF_DOoM;
     [SerializeField]
     private GameObject _player;
-    private int _circleColor;
     [SerializeField]
     private float _speed = 3f;
     [SerializeField]
     private bool _hasCollided;
     [SerializeField]
-    private float _lives = 4f;
+    private static float _lives = 4f;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,13 +25,8 @@ public class Player : MonoBehaviour
 
         weapons = 0;
 
-        Debug.LogFormat("You have");
-        Debug.Log(_lives);
-        Debug.Log("lives to start");
+        transform.position = new Vector3(Random.Range(-11f, 11f), Random.Range(-5f, 5f), 0);
 
-        _THE_CIRCLE_OF_DOoM.GetComponent<Renderer>().material.color = Color.red;
-        _circleColor = 1;
-        
     }
 
     // Update is called once per frame
@@ -78,8 +73,6 @@ public class Player : MonoBehaviour
         {
             _hasCollided = false;
 
-            transform.position = new Vector3(Random.Range(-11f, 11f), Random.Range(-5f, 5f), 0);
-
             _lives = _lives - 1;
             Debug.Log(_lives);
             Debug.Log("lives left");
@@ -88,7 +81,7 @@ public class Player : MonoBehaviour
                 Application.Quit();
                 Debug.Log("attempted Quit");
             }
-
+            SceneManager.LoadScene("SampleScene");
         }
         else
         {

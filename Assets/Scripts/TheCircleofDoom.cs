@@ -62,9 +62,7 @@ public class TheCircleofDoom : MonoBehaviour
             
             Player player = other.transform.GetComponent<Player>();
             player.SetCircleofDoomCollision();
-
-            //moves to new random location after collision
-            transform.position = new Vector3(Random.Range(-11f, 11f), Random.Range(-5f, 5f), 0);
+     
 
         }
     }
