@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     private bool _hasCollided;
     [SerializeField]
     private static float _lives = 4f;
+    [SerializeField]
+    private GameObject _laserPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +56,11 @@ public class Player : MonoBehaviour
                 weapons = 0;
             }
             weaponsChecked = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(_laserPrefab, transform.position, Quaternion.identity);
         }
 
         if (Input.GetKeyDown(KeyCode.I))
