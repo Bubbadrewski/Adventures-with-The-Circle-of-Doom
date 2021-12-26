@@ -10,6 +10,8 @@ public class Laser : MonoBehaviour
     private GameObject _laser;
     [SerializeField]
     private float _projectileSpeed = 10;
+    [SerializeField]
+    private Player _player;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,7 @@ public class Laser : MonoBehaviour
             TheCircleofDoom theCircleofDoom = other.transform.GetComponent<TheCircleofDoom>();
             theCircleofDoom.LaserShot();
             Object.Destroy(_laser);
+            _player.PointGained();
         }
     }
 }

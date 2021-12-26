@@ -48,6 +48,7 @@ MonoBehaviour:
   theCircleofDoom: {fileID: 6695092042561619771, guid: f8e39f28df93f0147adb9cff7df7574c, type: 3}
   _laser: {fileID: 2736270745463786446}
   _projectileSpeed: 10
+  _player: {fileID: 5219879753503581763, guid: 0d6b63b8969b33348bdf63c5cf4080d3, type: 3}
 --- !u!212 &2235882354362842354
 SpriteRenderer:
   m_ObjectHideFlags: 0

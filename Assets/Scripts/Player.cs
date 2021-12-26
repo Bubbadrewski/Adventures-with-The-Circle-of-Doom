@@ -9,9 +9,9 @@ public class Player : MonoBehaviour
     private int weapons;
     private bool weaponsChecked;
     [SerializeField]
-    private GameObject _THE_CIRCLE_OF_DOoM;
+    private TheCircleofDoom _THE_CIRCLE_OF_DOoM;
     [SerializeField]
-    private GameObject _player;
+    private Player _player;
     [SerializeField]
     private float _speed = 3f;
     [SerializeField]
@@ -20,12 +20,22 @@ public class Player : MonoBehaviour
     private static float _lives = 4f;
     [SerializeField]
     private GameObject _laserPrefab;
+    [SerializeField]
+    private UIManager _uIManager;
+    
     // Start is called before the first frame update
     void Start()
     {
         weaponsChecked = true;
 
         weapons = 0;
+
+        _uIManager = GameObject.Find("UI_Manager").GetComponent<UIManager>();
+
+        if (_uIManager == null)
+        {
+            Debug.Log("the uIManager is null");
+        }
 
         //transform.position = new Vector3(Random.Range(-11f, 11f), Random.Range(-5f, 5f), 0);
 
@@ -82,14 +92,15 @@ public class Player : MonoBehaviour
             _hasCollided = false;
 
             _lives = _lives - 1;
-            Debug.Log(_lives);
-            Debug.Log("lives left");
+
             if (_lives == 0)
             {
                 Application.Quit();
                 Debug.Log("attempted Quit");
             }
             SceneManager.LoadScene("SampleScene");
+            _uIManager.DamageTaken(_lives);
+            _uIManager.PointsUpdate();
         }
         else
         {
@@ -118,8 +129,6 @@ public class Player : MonoBehaviour
             transform.position = new Vector3(transform.position.x, 5, 0);
         }
         */
-
-       
     }
     public void SetCircleofDoomCollision()
     {
@@ -129,5 +138,8 @@ public class Player : MonoBehaviour
     {
         _hasCollided = false;
     }
-
+    public void PointGained()
+    {
+        _lives = _lives + 1;
+    }
 }
