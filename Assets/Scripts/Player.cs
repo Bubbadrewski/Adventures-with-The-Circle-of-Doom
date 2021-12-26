@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
 
         weapons = 0;
 
-        transform.position = new Vector3(Random.Range(-11f, 11f), Random.Range(-5f, 5f), 0);
+        //transform.position = new Vector3(Random.Range(-11f, 11f), Random.Range(-5f, 5f), 0);
 
     }
 
@@ -70,6 +70,7 @@ public class Player : MonoBehaviour
     }
     void CalculateMovement()
     {
+         
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 

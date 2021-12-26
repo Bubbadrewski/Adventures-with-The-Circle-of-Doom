@@ -9,11 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5831448056602502715}
+  - component: {fileID: -2806121318188765402}
   - component: {fileID: 2235882354362842354}
   - component: {fileID: 590719298597984721}
   m_Layer: 0
   m_Name: Laser
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,6 +33,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 90}
+--- !u!114 &-2806121318188765402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2736270745463786446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a71d0d8478887e40acbf1207da382ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theCircleofDoom: {fileID: 6695092042561619771, guid: f8e39f28df93f0147adb9cff7df7574c, type: 3}
+  _laser: {fileID: 2736270745463786446}
+  _projectileSpeed: 10
 --- !u!212 &2235882354362842354
 SpriteRenderer:
   m_ObjectHideFlags: 0

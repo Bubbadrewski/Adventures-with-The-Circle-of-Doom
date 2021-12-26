@@ -9,6 +9,8 @@ public class TheCircleofDoom : MonoBehaviour
     //this might be useless, further testing required
     [SerializeField]
     GameObject Player;
+    [SerializeField]
+    private GameObject _theCircleofDoom;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,5 +67,10 @@ public class TheCircleofDoom : MonoBehaviour
      
 
         }
+    }
+
+    public void LaserShot()
+    {
+        Object.Destroy(_theCircleofDoom);
     }
 }

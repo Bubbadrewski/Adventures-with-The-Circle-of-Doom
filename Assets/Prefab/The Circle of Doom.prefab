@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6695092042561619760}
   m_Layer: 0
   m_Name: The Circle of Doom
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,3 +136,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   Player: {fileID: 0}
+  _theCircleofDoom: {fileID: 6695092042561619771}
