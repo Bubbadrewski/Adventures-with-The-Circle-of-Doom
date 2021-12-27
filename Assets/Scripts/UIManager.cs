@@ -24,6 +24,10 @@ public class UIManager : MonoBehaviour
         _livesText.text = "Lives: " + _lives.ToString();
         _livesCount = _lives;
     }
+    public void PointGained(float _lives)
+    {
+        _livesCount = _lives;
+    }
     public void PointsUpdate()
     {
     

@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         CalculateMovement();
+        _uIManager.PointGained(_lives);
 
         //Used to define what weapon is being used
         if (!weaponsChecked)
@@ -100,7 +101,7 @@ public class Player : MonoBehaviour
             }
             SceneManager.LoadScene("SampleScene");
             _uIManager.DamageTaken(_lives);
-            _uIManager.PointsUpdate();
+            
         }
         else
         {
